@@ -5,6 +5,9 @@ function colocarDadosNaTela(dados) {
     document.querySelector('.texto-previsao').innerHTML = dados.weather[0].description;
     document.querySelector('.umidade').innerHTML = `Umidade ${dados.main.humidity}%`
     document.querySelector('.img-previsao').src = `https://openweathermap.org/img/wn/${dados.weather[0].icon}.png`;
+
+    document.querySelector('.max-temp').innerHTML = `Máx: ${Math.floor(dados.main.temp_max)}`;
+    document.querySelector('.min-temp').innerHTML = `Min: ${Math.floor(dados.main.temp_min)}`;
 }
 
 async function buscarCidade(cidade) {
@@ -13,6 +16,8 @@ async function buscarCidade(cidade) {
     const dados = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${key}&lang=pt_br&units=metric`)
         .then(response => response.json())
         .catch(e => console.log(e));
+
+        console.log(dados);
 
     colocarDadosNaTela(dados);
 }

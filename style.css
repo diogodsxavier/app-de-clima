@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #3333f6;
+    background-color: #54d5f2;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -74,6 +74,12 @@ body {
     color: #fff;
     margin-left: 20px;
     text-transform: capitalize;
+}
+
+.max-min-temp {
+    color: #fff;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .umidade {
